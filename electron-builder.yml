@@ -1,0 +1,12 @@
+appId: com.example.astod
+productName: Astod
+copyright: Copyright © 2023 1hitsong
+directories:
+  output: dist
+  buildResources: resources
+files:
+  - from: .
+    filter:
+      - package.json
+      - app
+publish: null

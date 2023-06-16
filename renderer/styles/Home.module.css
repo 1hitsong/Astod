@@ -1,0 +1,44 @@
+.container {
+  background-color: #050505;
+  background-image:
+    repeating-linear-gradient(120deg, rgba(75,75,75,.1), rgba(75,75,75,.1) 1px, transparent 1px, transparent 60px),
+    repeating-linear-gradient(60deg, rgba(75,75,75,.1), rgba(75,75,75,.1) 1px, transparent 1px, transparent 60px);
+  background-size: 70px 120px;
+
+  color: #f7f7f7;
+  text-align: left;
+  font-size: 14px;
+}
+
+.header {
+  background-color: rgba(0,0,0,.9);
+  overflow: hidden;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  padding: 10px 0;
+  flex-direction: row;
+  justify-content: right;
+}
+
+.messageIcon {
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.main {
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.container a {
+  color: rgb(28, 162, 240);
+}
+
+.container a:visited {
+  color: rgb(199, 65, 240);
+}

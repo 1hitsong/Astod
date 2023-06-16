@@ -1,0 +1,42 @@
+.card {
+  background: rgba(25, 25, 25, .6);
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 20px 0;
+}
+
+.card:hover {
+  background: rgba(50, 50, 50, .6);
+}
+
+.card .cardLink {
+  color: #fff;
+  display: flex;
+}
+.card .cardLink:visited {
+  color: #fff;
+}
+
+.content {
+  padding: 10px;
+}
+
+.previewImage {
+  padding: 10px 0 10px 10px;
+}
+
+.image {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+}
+
+.title {
+  font-size: 13px;
+  margin: 0;
+}
+
+.description {
+  font-size: 13px;
+  margin: 0;
+}

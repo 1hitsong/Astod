@@ -1,0 +1,29 @@
+.row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: left;
+  padding: 10px;
+}
+
+.reblog {
+  background: blue;
+}
+
+.author {
+  margin-top: 0;
+}
+
+.row:not(:last-child) {
+  border-bottom: 1px solid #383838;
+}
+
+.row p:first-child{
+  margin-top:0;
+}
+
+.timestamp {
+  color: #aaa;
+  font-size: 13px;
+  font-weight: normal;
+  margin-left: 10px;
+}

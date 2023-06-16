@@ -1,0 +1,27 @@
+.engagementCounts {
+  margin: 10px 0 0;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  display: flex;
+  max-width: 200px;
+  color: #999;
+}
+
+.engagementCounts .icon {
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
+}
+
+.engagementCounts .engageItem:hover {
+  cursor: pointer;
+}
+
+.engagementCounts .engageItem:hover .icon {
+  background-color: rgba(28, 162, 240, .15);
+  color: rgb(28, 162, 240);
+}
