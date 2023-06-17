@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://github.com/1hitsong/AOS">
+    <a href="https://github.com/1hitsong/Astod">
         <img height="175" width="175" alt="Astod" src="https://raw.githubusercontent.com/1hitsong/astod/master/resources/icon.png"/>
     </a>
 </p>
@@ -9,7 +9,7 @@
 
 ---
 <p align="center">
-    <a href="https://github.com/1hitsong/AOS">
-        <img alt="GPL 2.0 License" src="https://img.shields.io/github/license/1hitsong/AOS.svg"/>
+    <a href="https://github.com/1hitsong/Astod">
+        <img alt="GPL 2.0 License" src="https://img.shields.io/github/license/1hitsong/Astod.svg"/>
     </a>
 </p>
