@@ -1,4 +1,8 @@
 .row {
+  padding: 10px;
+}
+
+.postContent {
   display: flex;
   align-items: flex-start;
   justify-content: left;

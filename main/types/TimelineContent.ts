@@ -5,6 +5,7 @@ import type Emoji from './Emoji'
 
 interface TimelineContent {
     reblog: {
+        in_reply_to_account_id: string
         id: string
         content: string
         favourites_count: number
@@ -17,6 +18,7 @@ interface TimelineContent {
         card: Card
         emojis: Emoji[]
     },
+    in_reply_to_account_id: string
     id: string
     content: string
     favourites_count: number
