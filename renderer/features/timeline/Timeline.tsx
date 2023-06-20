@@ -11,6 +11,7 @@ import EngagementCounts from '../engagementcounts/EngagementCounts'
 import LinkCard from '../linkcard/LinkCard'
 import Link from 'next/link'
 import { formatedTimestamp } from '../../../main/helpers/dateTime'
+import { TbRepeat, TbCornerDownLeft } from "react-icons/tb";
 import type TimelineContent from '../../../main/types/TimelineContent'
 
 const rowClasses = (isReblog: boolean): string => {
@@ -24,27 +25,41 @@ const renderTimelineRow = (item: TimelineContent): JSX.Element => {
     const timeStamp: string = formatedTimestamp(timeLineItem.created_at)
     const rowClassName: string = rowClasses(item.reblog !== null)
 
+    const replaceEmojis = (content: string): string => {
+        let postContent:string = content
+        {timeLineItem.emojis.map( emoji => (
+            postContent = postContent.replace(`:${emoji.shortcode}:`,
+                `<img src="${emoji.static_url}" width=25 alt="${emoji.shortcode}" title="${emoji.shortcode}" />`
+            )
+        ))}
+        return postContent
+    }
+
     return (
         <div key={timeLineItem.id} className={rowClassName}>
-            <Avatar account={timeLineItem.account} />
-            <div>
-                <h3 className={styles.author}>{timeLineItem.account.display_name}
-                    <span className={styles.timestamp}>
-                        <Link href={{ pathname: '/replies', query: { id: timeLineItem.id } }}>{timeStamp}</Link>
-                    </span>
-                </h3>
+            {item.reblog && 
+                <div><TbRepeat /> {item.account.display_name} boosted</div>
+            }
+            {item.in_reply_to_account_id && 
+                <div><TbCornerDownLeft /> Replied to {item.account.display_name}</div>
+            }
+            <div className={styles.postContent}>
+                <Avatar account={timeLineItem.account} />
+                <div>
+                    <h3 className={styles.author}>{timeLineItem.account.display_name}
+                        <span className={styles.timestamp}>
+                            <Link href={{ pathname: '/replies', query: { id: timeLineItem.id } }}>{timeStamp}</Link>
+                        </span>
+                    </h3>
 
-                <div dangerouslySetInnerHTML={{ __html: timeLineItem.content }} />
+                    <div dangerouslySetInnerHTML={{ __html: replaceEmojis(timeLineItem.content) }} />
 
-                {timeLineItem.emojis.map( emoji => (
-                    <img src={emoji.static_url} width={32} alt={emoji.shortcode} title={emoji.shortcode} />
-                ))}
-
-                <MediaAttachments mediaAttachments={timeLineItem.media_attachments} />
-        
-                <LinkCard card={timeLineItem.card} />
-        
-                <EngagementCounts id={timeLineItem.id} favourites_count={timeLineItem.favourites_count} reblogs_count={timeLineItem.reblogs_count} replies_count={timeLineItem.replies_count} />
+                    <MediaAttachments mediaAttachments={timeLineItem.media_attachments} />
+            
+                    <LinkCard card={timeLineItem.card} />
+            
+                    <EngagementCounts id={timeLineItem.id} favourites_count={timeLineItem.favourites_count} reblogs_count={timeLineItem.reblogs_count} replies_count={timeLineItem.replies_count} />
+                </div>
             </div>
         </div>
     )
